@@ -1,0 +1,36 @@
+5.12
+数据库和spring-boot连接失败
+com.mysql:mysql-connector-j:unknown
+这个是原视频的方法，不知道老师上课教的那个方法有没有用
+
+5.13 14:44
+终于解决了这个问题
+和上面那个不同，但是我更理解了maven
+这是一个依赖管理辅助
+我之前运行报错是因为Jakarta Persistence API这个依赖没在pom中写入，导致程序找不到，
+但是install当然可以正常运行，毕竟pom没写，下载Jakarta Persistence API就没写进它的todolist上
+于是我添加了Jakarta Persistence API在pom，但是程序还是运行不了，而且install运行也报错
+后来我发现可以在右侧的maven里查看项目依赖，这里我发现已经有了Jakarta Persistence API依赖，不应该报错啊
+install报错说是依赖矛盾或版本不匹配，但是maven这里倒是不直接显示矛盾，我又反感查版本信息
+最后我才发现你可以在maven里查看依赖关系，我发现在一个叫hybrid的包里已经有了个Jakarta Persistence API3.0
+他与我手动添加的Jakarta Persistence API2.0自然是版本冲突，于是install失败
+于是我删了手动添加的Jakarta Persistence API2.0，现在有了就重新运行项目就ok啦，才发现又回到了原点
+本身就有Jakarta Persistence API3.0，但是它没明写在pom，因此项目不知道，install倒是知道
+你加其他版本的Jakarta Persistence API反而报错，
+于是你只用在pom中加入Jakarta Persistence API3.0告诉项目Persistence依赖存在，同时它与hybrid中不冲突，可以正确运行就可以了
+
+晚上 11：59
+又是同样类似的bug再发生
+才发现这次maven不能查到矛盾依赖，奇怪
+为什么老是我依赖出问题
+是我maven版本的原因吗
+
+5.14 晚上11：32
+今天改了一推bugs
+本来以为翻不过大山原来也可以翻越
+也有很多时候不是依赖的关系，而是代码的关系，而反而是代码这种个性化的错误网上才查不到，
+或许这也是在暗示可能是代码出了问题
+！重要备注：随着对maven的理解加深
+我又把maven版本改到3.0以上了
+之前entity的错误是javax的问题，现在我只用javatar就可以改好
+因为javatar本身就是javax的升级
