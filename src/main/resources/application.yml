@@ -1,0 +1,6 @@
+spring:
+  security:
+    user:
+      name: mnyh
+      password: hjw040305
+
