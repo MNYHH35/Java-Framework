@@ -34,3 +34,6 @@ install报错说是依赖矛盾或版本不匹配，但是maven这里倒是不�
 我又把maven版本改到3.0以上了
 之前entity的错误是javax的问题，现在我只用javatar就可以改好
 因为javatar本身就是javax的升级
+
+5.15 10:49
+测试git 1
