@@ -1,11 +1,1 @@
-2024.5.8 21:02
-看到了第64集carousel,但是现在有3个明显的问题
-1.轮播可以展现,但是轮播按钮按了无效
-2.手机端没有轮播按钮
-3.view more显示在侧面不是中间
 
-发现了C:\Users\66460\Desktop\期末大作业合集\java框架\fullstack-react-and-springboot\Static HTML_CSS Files\Section 10. Home Page Static Files
-里面的carousel正是当前进度,这个课程资源真的很完善
-
-2024.5.9 18:34
-看完了第66集
