@@ -9,11 +9,10 @@ import java.util.Date;
 @Table(name = "movies")
 @Data
 public class Movie {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "movie_id")
-    private Long id;
+    private int movieId;
 
     @Column(name = "title")
     private String title;
@@ -27,14 +26,21 @@ public class Movie {
     @Column(name = "cover_image")
     private String coverImage;
 
-    @Column(name = "trailer_link")
-    private String trailerLink;
+    @Column(name = "type")
+    private String type;
 
-    @Column(name = "type_id") // Assuming this is a foreign key to movie types
-    private Long typeId;
+    @Column(name = "region")
+    private String region;
 
-    @Column(name = "region_id") // Assuming this is a foreign key to movie regions
-    private Long regionId;
+    @Column(name = "creators")
+    private String creators;
 
-    // Getters and setters
+    @Column(name = "vip")
+    private int vip;
+
+    @Column(name = "price")
+    private double price;
+
+    @Column(name = "stars")
+    private double stars;
 }

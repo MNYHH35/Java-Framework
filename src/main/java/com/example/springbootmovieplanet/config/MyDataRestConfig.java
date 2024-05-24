@@ -1,5 +1,6 @@
 package com.example.springbootmovieplanet.config;
 import com.example.springbootmovieplanet.entity.Movie;
+import com.example.springbootmovieplanet.entity.Review;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
@@ -21,6 +22,7 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
                 HttpMethod.PUT};
 
         config.exposeIdsFor(Movie.class);
+        config.exposeIdsFor(Review.class);
 
         disableHttpMethods(Movie.class, config, theUnsupportedActions);
 
